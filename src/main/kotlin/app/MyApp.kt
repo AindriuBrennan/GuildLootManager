@@ -1,9 +1,9 @@
 package app
 
 import tornadofx. *
-import views.Landing
+import views.LandingView
 
-class MyApp : App(Landing::class)
+class MyApp : App(LandingView::class)
 
 fun main(args: Array<String>) {
     launch<MyApp>(args)

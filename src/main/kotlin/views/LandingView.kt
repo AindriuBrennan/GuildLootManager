@@ -6,7 +6,7 @@ import javafx.scene.control.Button
 import javafx.scene.layout.BorderPane
 import tornadofx. *
 
-class Landing: View() {
+class LandingView: View() {
     override val root = vbox {
         setPrefSize(600.00,400.00)
 
@@ -17,15 +17,30 @@ class Landing: View() {
                     replaceWith<MemberManagementView>(
                             ViewTransition.Slide(0.4.seconds, ViewTransition.Direction.LEFT),
                             true,
-                            true
+                            true,
                     )
                 }
             }
             item("Raid Management") {
                 activeItem = this
-                whenSelected {  }
+                whenSelected {
+                    replaceWith<RaidManagementView>(
+                            ViewTransition.Slide(0.4.seconds, ViewTransition.Direction.LEFT),
+                            true,
+                            true,
+                    )
+                }
             }
-            item("Item DB")
+            item("Item DB") {
+                activeItem = this
+                whenSelected {
+                    replaceWith<ItemAndPlyerView>(
+                            ViewTransition.Slide(0.4.seconds, ViewTransition.Direction.LEFT),
+                            true,
+                            true,
+                    )
+                }
+            }
         }
     }
 //        setPrefSize(600.00,400.00)

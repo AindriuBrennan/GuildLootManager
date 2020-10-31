@@ -30,7 +30,7 @@ class MemberManagementView: View() {
             }
             button("Main Menu") {
                 action {
-                    replaceWith<Landing>(
+                    replaceWith<LandingView>(
                             ViewTransition.Slide(0.4.seconds,ViewTransition.Direction.RIGHT),
                             true,
                             true
