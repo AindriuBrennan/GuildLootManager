@@ -13,7 +13,13 @@ class Landing: View() {
         listmenu(theme = "blue", orientation = Orientation.HORIZONTAL) {
             item("Member Management") {
                 activeItem = this
-                whenSelected{}
+                whenSelected{
+                    replaceWith<MemberManagementView>(
+                            ViewTransition.Slide(0.4.seconds, ViewTransition.Direction.LEFT),
+                            true,
+                            true
+                    )
+                }
             }
             item("Raid Management") {
                 activeItem = this
