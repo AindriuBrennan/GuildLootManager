@@ -1,5 +1,7 @@
 package models
 
 class Item (
-        val name: String = ""
+        val id: Long? =0,
+        val name: String = "",
+        val playersWithItem: List<Character>,
 )
