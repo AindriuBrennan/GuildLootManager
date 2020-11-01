@@ -1,7 +1,42 @@
-{
-  "id": 1,
-  "name": "Aindriu",
-  "race": "Gnome",
-  "classType": "Mage",
-  "itemsCollected": []
-}
+[
+  {
+    "id": 1,
+    "name": "Aindriu",
+    "race": "Gnome",
+    "classType": "Mage",
+    "itemsCollected": [],
+    "dateCollected": []
+  },
+  {
+    "id": -8496705351274164255,
+    "name": "StringProperty [bean: tornadofx.ViewModel@634af49b, value: test]",
+    "race": "StringProperty [bean: tornadofx.ViewModel@634af49b, value: test]",
+    "classType": "StringProperty [bean: tornadofx.ViewModel@634af49b, value: test]",
+    "itemsCollected": [],
+    "dateCollected": []
+  },
+  {
+    "id": 6382938273848680609,
+    "name": "StringProperty [bean: tornadofx.ViewModel@634af49b, value: tiddlyWinks]",
+    "race": "StringProperty [bean: tornadofx.ViewModel@634af49b, value: Human]",
+    "classType": "StringProperty [bean: tornadofx.ViewModel@634af49b, value: Warrior]",
+    "itemsCollected": [],
+    "dateCollected": []
+  },
+  {
+    "id": 6173770249929435507,
+    "name": "StringProperty [bean: tornadofx.ViewModel@4eddf1ee, value: wysiwys]",
+    "race": "StringProperty [bean: tornadofx.ViewModel@4eddf1ee, value: Night Elf]",
+    "classType": "StringProperty [bean: tornadofx.ViewModel@4eddf1ee, value: Priest]",
+    "itemsCollected": [],
+    "dateCollected": []
+  },
+  {
+    "id": 8904583113283713370,
+    "name": "StringProperty [bean: tornadofx.ViewModel@3f2172de, value: Caileach]",
+    "race": "StringProperty [bean: tornadofx.ViewModel@3f2172de, value: Gnome]",
+    "classType": "StringProperty [bean: tornadofx.ViewModel@3f2172de, value: Warlock]",
+    "itemsCollected": [],
+    "dateCollected": []
+  }
+]

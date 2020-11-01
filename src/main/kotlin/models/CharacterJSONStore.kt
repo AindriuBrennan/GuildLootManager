@@ -6,14 +6,13 @@ import com.google.gson.reflect.TypeToken
 import mu.KotlinLogging
 
 import helpers.*
-import org.omg.CORBA.Object
 import java.util.*
 
 private val logger = KotlinLogging.logger {}
 
 val CHARACTER_JSON_FILE ="characters.json"
 val characterGsonBuilder =GsonBuilder().setPrettyPrinting().create()
-val characterListType = object : TypeToken<java.util.ArrayList<Character>>() {}.type
+val characterListType = object : TypeToken<java.util.ArrayList<CharacterModel>>() {}.type
 
 fun generateRandomId(): Long {
     return Random().nextLong()
@@ -21,7 +20,7 @@ fun generateRandomId(): Long {
 
 class CharacterJSONStore : CharacterStore {
 
-    var characters = mutableListOf<Character>()
+    var characters = mutableListOf<CharacterModel>()
 
     init {
         if (exists(CHARACTER_JSON_FILE)) {
@@ -29,25 +28,30 @@ class CharacterJSONStore : CharacterStore {
         }
     }
 
-    override fun findOne(id: Long): Character? {
-        return characters.find { c -> c.id == id}
+
+    override fun findOne(name: String): CharacterModel? {
+        return characters.find { c -> c.name == name}
     }
 
-    override fun create(character: Character) {
-        character.id = generateRandomId()
-        characters.add(character)
+    override fun findAll(): MutableList<CharacterModel> {
+        return characters
+    }
+
+    override fun create(characterModel: CharacterModel) {
+        characterModel.id = generateRandomId()
+        characters.add(characterModel)
         serialize()
     }
 
-    override fun delete(character: Character) {
-        characters.remove(character)
+    override fun delete(characterModel: CharacterModel) {
+        characters.remove(characterModel)
         serialize()
     }
 
-    override fun update(character: Character) {
-        var foundCharacter = findOne(character.id!!)
+    override fun update(characterModel: CharacterModel) {
+        var foundCharacter = findOne(characterModel.name!!)
         if(foundCharacter != null) {
-            foundCharacter.itemsCollected =character.itemsCollected
+            foundCharacter.itemsCollected =characterModel.itemsCollected
         }
         serialize()
     }
