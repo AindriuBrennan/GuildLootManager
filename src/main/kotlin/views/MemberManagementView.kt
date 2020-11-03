@@ -1,5 +1,5 @@
 package views
-import controllers.characterController
+import controllers.CharacterController
 import javafx.beans.property.SimpleStringProperty
 import models.CharacterModel
 import sun.java2d.pipe.SpanShapeRenderer
@@ -10,7 +10,7 @@ class MemberManagementView: View() {
     val _name = model.bind {SimpleStringProperty()}
     val _race = model.bind {SimpleStringProperty()}
     val _classType = model.bind {SimpleStringProperty()}
-    val characterController: characterController by inject()
+    val characterController: CharacterController by inject()
     val tableContent = characterController.characters.findAll()
     val data = tableContent.asObservable()
     override val root = vbox{
@@ -34,12 +34,16 @@ class MemberManagementView: View() {
                 enableWhen(model.valid)
                 action{
                     runAsyncWithProgress {
-                        characterController.addChar(_name.toString(),_race.toString(),_classType.toString())
+                        characterController.addChar(_name.value  ,_race.value, _classType.value)
                     }
                     println("Character Created!")}
             }
             button("Delete Character"){
-                action{ println("Character Deleted")}
+                action{
+                    runAsyncWithProgress {
+                        characterController.deleteChar(_name.value)
+                    }
+                    println("Character Deleted here")}
             }
             button("Search Character"){
                 //implement search functionality
@@ -56,9 +60,9 @@ class MemberManagementView: View() {
         }
 
         tableview(data) {
-            readonlyColumn("Name", CharacterModel::name)
-            readonlyColumn("Race", CharacterModel::race)
-            readonlyColumn("Class", CharacterModel::classType)
+            column("Name", CharacterModel::name)
+            column("Race", CharacterModel::race)
+            column("Class", CharacterModel::classType)
         }
     }
 

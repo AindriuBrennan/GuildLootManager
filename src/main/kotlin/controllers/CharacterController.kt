@@ -5,8 +5,9 @@ import models.CharacterJSONStore
 import models.CharacterModel
 import tornadofx.*
 
-class characterController: Controller() {
+class CharacterController: Controller() {
 
+    val charModel = CharacterModel()
     val characters = CharacterJSONStore()
     val logger = KotlinLogging.logger {}
 
@@ -18,15 +19,12 @@ class characterController: Controller() {
     fun addChar (_name: String, _race: String, _classType: String ) {
         var newChar = CharacterModel(name = _name, race = _race, classType = _classType)
         characters.create(newChar)
-        logger.info("Character added")
+        logger.info("Character Added")
     }
 
-//    fun deleteChar (_name: String,_race: String,_classType: String) {
-//        var findChar =
-//        characters.remove()
-//
-//        }
-//
-//    }
-
+    fun deleteChar (_name: String) {
+       var charToDelete = CharacterModel(name = _name)
+        characters.delete(charToDelete)
+        logger.info("Character Deleted there ")
+    }
 }
