@@ -1,7 +1,34 @@
-{
-  "id": 1,
-  "name": "Aindriu",
-  "race": "Gnome",
-  "classType": "Mage",
-  "itemsCollected": []
-}
+[
+  {
+    "id": 1,
+    "name": "Aindriu",
+    "race": "Gnome",
+    "classType": "Mage",
+    "itemsCollected": [],
+    "dateCollected": []
+  },
+  {
+    "id": -3052824544771462661,
+    "name": "Catman",
+    "race": "dwarf",
+    "classType": "rogue",
+    "itemsCollected": [],
+    "dateCollected": []
+  },
+  {
+    "id": -3512374711198639026,
+    "name": "tiddlywinks",
+    "race": "Gnome",
+    "classType": "Mage",
+    "itemsCollected": [],
+    "dateCollected": []
+  },
+  {
+    "id": -3961185459116380989,
+    "name": "bob",
+    "race": "Night Elf",
+    "classType": "Priest",
+    "itemsCollected": [],
+    "dateCollected": []
+  }
+]
