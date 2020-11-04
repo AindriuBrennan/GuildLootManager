@@ -23,14 +23,18 @@ class ItemJSONStore : ItemStore {
         }
     }
 
-    override fun findOne(id: Long): Item? {
-        return items.find { i -> i.id == id}
+    override fun findOne(itemToFind: Item): Item? {
+        return items.find { i -> i == itemToFind}
     }
 
-    override fun update(item: Item) {
-        val foundItem = findOne(item.id!!)
+    override fun findAll(): MutableList<Item>{
+        return items
+    }
+
+    override fun update(_itemName: Item, _playerWithItem: String) {
+        val foundItem = findOne(_itemName)
         if(foundItem != null) {
-            foundItem.playersWithItem  = item.playersWithItem
+            foundItem.playersWithItem?.add(_playerWithItem)
         }
         serialize()
     }

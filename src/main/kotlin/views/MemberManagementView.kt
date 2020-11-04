@@ -2,7 +2,6 @@ package views
 import controllers.CharacterController
 import javafx.beans.property.SimpleStringProperty
 import models.CharacterModel
-import sun.java2d.pipe.SpanShapeRenderer
 import tornadofx.*
 
 class MemberManagementView: View() {
@@ -13,6 +12,8 @@ class MemberManagementView: View() {
     val characterController: CharacterController by inject()
     val tableContent = characterController.characters.findAll()
     val data = tableContent.asObservable()
+
+
     override val root = vbox{
         setPrefSize(600.00,400.00)
 
@@ -36,18 +37,20 @@ class MemberManagementView: View() {
                     runAsyncWithProgress {
                         characterController.addChar(_name.value  ,_race.value, _classType.value)
                     }
-                    println("Character Created!")}
+                    println("Character Created!")
+                }
             }
             button("Delete Character"){
                 action{
                     runAsyncWithProgress {
                         characterController.deleteChar(_name.value)
+
+
                     }
-                    println("Character Deleted here")}
+                    println("Character Deleted here")
+                }
             }
-            button("Search Character"){
-                //implement search functionality
-            }
+
             button("Main Menu") {
                 action {
                     replaceWith<LandingView>(
