@@ -1,7 +1,11 @@
 package views
 
 import controllers.CharacterController
+import controllers.ItemsController
 import javafx.beans.property.SimpleStringProperty
+import javafx.scene.control.SelectionMode
+import models.CharacterModel
+import models.Item
 import tornadofx.*
 
 class ItemAndPlyerView: View() {
@@ -10,29 +14,31 @@ class ItemAndPlyerView: View() {
     val _race = model.bind { SimpleStringProperty() }
     val _classType = model.bind { SimpleStringProperty() }
     val characterController: CharacterController by inject()
-    val tableContent =  characterController.characters.findOne(_name.value)
+    val characterContent =  characterController.characters.findAll()
+    val charData = characterContent.asObservable()
+    val itemController: ItemsController by inject()
+    val itemContent = itemController.items.findAll()
+    val itemData = itemContent.asObservable()
 
-//    val data = tableContent.asObservable()
+
 
 
     override val root =vbox {
         setPrefSize(600.00,400.00)
 
             hbox{
-                label("Item Name")
-                textfield(_name)
-                button("Search") {
-                    action {
-//                        val tableContent =  characterController.characters.findOne(_name.value)
-//                        val data = tableContent.asObservable()
-                    }
+                tableview(charData) {
+                    column("Name", CharacterModel::name)
+                    column("Race", CharacterModel::race)
+                    column("Class", CharacterModel::classType)
+                    column("Date Collected", CharacterModel::dateCollected)
+                    column("Items Received", CharacterModel::itemsCollected)
                 }
-
-                label("Player Name")
-                textfield()
-                button("Search")
             }
 
+            listview(itemData) {
+                selectionModel.selectionMode = SelectionMode.MULTIPLE
+            }
 
         button("Main Menu") {
             action {
