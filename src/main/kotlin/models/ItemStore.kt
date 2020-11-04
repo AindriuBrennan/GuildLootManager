@@ -1,7 +1,8 @@
 package models
 
 interface ItemStore {
-   fun findOne(id: Long): Item?
-   fun update(item: Item)
+   fun findOne(itemToFind: Item): Item?
+   fun findAll(): List<Item>
+   fun update(itemToUpdate: Item, charactersWithItem: String)
    fun delete(item: Item)
 }

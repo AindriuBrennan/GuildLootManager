@@ -1,6 +1,20 @@
-{
-  "id": 1,
-  "name": "Belt of Prophecy",
-  "playersWithItem": []
-
-}
+[
+  {
+    "id": 1,
+    "name": "Arcanists Crown",
+    "playersWithItem": [
+      "Aindriu",
+      "billy"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Azuresong Mageblade",
+    "playersWithItem": []
+  },
+  {
+    "id": 3,
+    "name": "Silithid Femur",
+    "playersWithItem": []
+  }
+]

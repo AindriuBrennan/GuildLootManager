@@ -6,6 +6,7 @@ import com.google.gson.reflect.TypeToken
 import mu.KotlinLogging
 
 import helpers.*
+import java.time.LocalDate
 import java.util.*
 
 private val logger = KotlinLogging.logger {}
@@ -43,15 +44,20 @@ class CharacterJSONStore : CharacterStore {
         serialize()
     }
 
-    override fun delete(characterModel: CharacterModel) {
-        characters.remove(characterModel)
+    override fun delete(_name: String) {
+        var charToDelete = findOne(_name)
+        if(charToDelete != null) {
+            characters.remove(charToDelete)
+        }
         serialize()
     }
 
-    override fun update(characterModel: CharacterModel) {
-        var foundCharacter = findOne(characterModel.name!!)
+    override fun update(_name: String, _itemsCollected: Item, _dateCollected: LocalDate) {
+        var foundCharacter = findOne(_name)
         if(foundCharacter != null) {
-            foundCharacter.itemsCollected =characterModel.itemsCollected
+            foundCharacter.itemsCollected?.add(_itemsCollected)
+            foundCharacter.dateCollected?.add(_dateCollected)
+//            characters.add(foundCharacter)
         }
         serialize()
     }

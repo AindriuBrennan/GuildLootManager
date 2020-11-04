@@ -1,21 +1,5 @@
 [
   {
-    "id": 1,
-    "name": "Aindriu",
-    "race": "Gnome",
-    "classType": "Mage",
-    "itemsCollected": [],
-    "dateCollected": []
-  },
-  {
-    "id": -3052824544771462661,
-    "name": "Catman",
-    "race": "dwarf",
-    "classType": "rogue",
-    "itemsCollected": [],
-    "dateCollected": []
-  },
-  {
     "id": -3512374711198639026,
     "name": "tiddlywinks",
     "race": "Gnome",
@@ -24,9 +8,31 @@
     "dateCollected": []
   },
   {
-    "id": -3961185459116380989,
-    "name": "bob",
-    "race": "Night Elf",
+    "id": 2019003447102032627,
+    "name": "billy",
+    "race": "Human",
+    "classType": "Palladin",
+    "itemsCollected": [
+      {
+        "id": 1,
+        "name": "Arcanists Crown",
+        "playersWithItem": [
+          "Aindriu"
+        ]
+      }
+    ],
+    "dateCollected": [
+      {
+        "year": 2020,
+        "month": 11,
+        "day": 5
+      }
+    ]
+  },
+  {
+    "id": -1135261327237342824,
+    "name": "Thorin",
+    "race": "Dwarf",
     "classType": "Priest",
     "itemsCollected": [],
     "dateCollected": []
