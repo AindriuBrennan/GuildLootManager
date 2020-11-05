@@ -1,24 +1,50 @@
 [
   {
-    "id": -3512374711198639026,
-    "name": "tiddlywinks",
+    "id": 8919496670556292818,
+    "name": "Bob",
     "race": "Gnome",
     "classType": "Mage",
-    "itemsCollected": [],
-    "dateCollected": []
-  },
-  {
-    "id": 2019003447102032627,
-    "name": "billy",
-    "race": "Human",
-    "classType": "Palladin",
     "itemsCollected": [
       {
         "id": 1,
         "name": "Arcanists Crown",
         "playersWithItem": [
-          "Aindriu"
+          "Aindriu",
+          "billy",
+          "Bob"
         ]
+      },
+      {
+        "id": 3,
+        "name": "Silithid Femur",
+        "playersWithItem": [
+          "Bob"
+        ]
+      }
+    ],
+    "dateCollected": [
+      {
+        "year": 2020,
+        "month": 11,
+        "day": 4
+      },
+      {
+        "year": 2020,
+        "month": 11,
+        "day": 4
+      }
+    ]
+  },
+  {
+    "id": 6433789069336503792,
+    "name": "Thorin",
+    "race": "Dwarf",
+    "classType": "Priest",
+    "itemsCollected": [
+      {
+        "id": 2,
+        "name": "Azuresong Mageblade",
+        "playersWithItem": []
       }
     ],
     "dateCollected": [
@@ -28,13 +54,5 @@
         "day": 5
       }
     ]
-  },
-  {
-    "id": -1135261327237342824,
-    "name": "Thorin",
-    "race": "Dwarf",
-    "classType": "Priest",
-    "itemsCollected": [],
-    "dateCollected": []
   }
 ]

@@ -3,17 +3,21 @@
     "id": 1,
     "name": "Arcanists Crown",
     "playersWithItem": [
-      "Aindriu"
+
     ]
   },
   {
     "id": 2,
     "name": "Azuresong Mageblade",
-    "playersWithItem": []
+    "playersWithItem": [
+      "Thorin"
+    ]
   },
   {
     "id": 3,
     "name": "Silithid Femur",
-    "playersWithItem": []
+    "playersWithItem": [
+      "Bob"
+    ]
   }
 ]
