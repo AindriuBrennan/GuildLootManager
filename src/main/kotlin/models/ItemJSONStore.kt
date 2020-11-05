@@ -39,8 +39,11 @@ class ItemJSONStore : ItemStore {
         serialize()
     }
 
-    override fun delete(item: Item) {
-        items.remove(item)
+    override fun delete(_itemName: Item, _playerWithItem: String) {
+        val foundItem = findOne(_itemName)
+        if(foundItem != null) {
+            foundItem.playersWithItem?.remove(_playerWithItem)
+        }
         serialize()
     }
 
