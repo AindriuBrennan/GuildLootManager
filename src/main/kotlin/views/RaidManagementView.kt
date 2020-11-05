@@ -53,10 +53,16 @@ class RaidManagementView: View() {
                             itemController.updateItem(_itemCollected.value, _name.value )
 
                         }
-                        println("Character Created!")
+                        println("Character Item Record Updated!")
                     }
-
-
+                }
+                button("Delete Item") {
+                    action {
+                        runAsyncWithProgress {
+                            itemController.deleteItemFromPlayer(_itemCollected.value, _name.value)
+                        }
+                        println("Character Record Deleted from Item")
+                    }
                 }
                 button("Main Menu") {
                     action {

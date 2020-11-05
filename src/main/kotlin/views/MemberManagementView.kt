@@ -1,5 +1,6 @@
 package views
 import controllers.CharacterController
+import controllers.ItemsController
 import javafx.beans.property.SimpleStringProperty
 import models.CharacterModel
 import tornadofx.*
@@ -9,6 +10,7 @@ class MemberManagementView: View() {
     val _name = model.bind {SimpleStringProperty()}
     val _race = model.bind {SimpleStringProperty()}
     val _classType = model.bind {SimpleStringProperty()}
+    val itemController: ItemsController by inject()
     val characterController: CharacterController by inject()
     val tableContent = characterController.characters.findAll()
     val data = tableContent.asObservable()
@@ -44,8 +46,6 @@ class MemberManagementView: View() {
                 action{
                     runAsyncWithProgress {
                         characterController.deleteChar(_name.value)
-
-
                     }
                     println("Character Deleted here")
                 }

@@ -21,6 +21,10 @@ class ItemsController: Controller() {
         items.update(_itemName, _playerWithItem)
     }
 
+    fun deleteItemFromPlayer(_itemName: Item, _playerWithItem: String) {
+        items.delete(_itemName, _playerWithItem)
+    }
+
 }
 
 //override fun update(_itemName: String, _playerWithItem: CharacterModel) {
