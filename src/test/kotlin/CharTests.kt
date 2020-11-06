@@ -15,19 +15,16 @@ class CharTests {
     private val itemsCollected: ArrayList<Item> = ArrayList()
     private val dateCollected: ArrayList<LocalDate>? = ArrayList()
 
-//    private val testCharacter: CharacterModel = CharacterModel(212,"Lenny","Gnome", "Mage")
 
-
+    /**
+     * Test creating a character
+     */
 
     @Test
     fun testUserCreate() {
         characterController.addChar(charName,charRace,charClassType)
-
         val getUser = characterController.characters.findOne(charName)
-
-
             assertTrue(charName== getUser!!.name)
-
 
     }
 }
