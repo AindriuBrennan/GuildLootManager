@@ -1,9 +1,15 @@
-package helpers
+package org.wit.helpers
 
 import mu.KotlinLogging
 import java.io.*
 
 val logger = KotlinLogging.logger {}
+
+/**
+ *
+ * Helper functions for reading and writing to JSON file
+ * these functions were supplied to us from class labs
+ */
 
 fun write( fileName: String, data: String) {
 

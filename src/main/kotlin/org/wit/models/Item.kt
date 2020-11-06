@@ -1,4 +1,4 @@
-package models
+package org.wit.models
 
 /**
  * Item Model which users will be able to add to players

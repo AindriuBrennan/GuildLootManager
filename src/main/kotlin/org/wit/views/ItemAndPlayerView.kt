@@ -1,12 +1,20 @@
-package views
+package org.wit.views
 
-import controllers.CharacterController
-import controllers.ItemsController
+import org.wit.controllers.CharacterController
+import org.wit.controllers.ItemsController
 import javafx.beans.property.SimpleStringProperty
 import javafx.scene.control.SelectionMode
-import models.CharacterModel
-import models.Item
+import org.wit.models.CharacterModel
+import org.wit.models.Item
 import tornadofx.*
+
+/**
+ *
+ * A view for seeing players and items at the same time, originally
+ * I wanted this to be a tableview with expandable rows but TornadoFX did
+ * not want to work with me.
+ *
+ */
 
 class ItemAndPlyerView: View() {
     val model = ViewModel()
@@ -36,8 +44,12 @@ class ItemAndPlyerView: View() {
                     column("Items Received", CharacterModel::itemsCollected)
                 }
             }
-
-            listview(itemData) {
+        /**
+         *
+         * ListView of items, not displaying item names due to how the item objects
+         * are interacting with the view model
+         */
+        listview(itemData) {
                 selectionModel.selectionMode = SelectionMode.MULTIPLE
             }
 

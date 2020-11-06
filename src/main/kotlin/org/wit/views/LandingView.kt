@@ -1,4 +1,4 @@
-package views
+package org.wit.views
 
 import javafx.geometry.Orientation
 import javafx.scene.Parent

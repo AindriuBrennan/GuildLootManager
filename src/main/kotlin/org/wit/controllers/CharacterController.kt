@@ -1,9 +1,9 @@
-package controllers
+package org.wit.controllers
 
 import mu.KotlinLogging
-import models.CharacterJSONStore
-import models.CharacterModel
-import models.Item
+import org.wit.models.CharacterJSONStore
+import org.wit.models.CharacterModel
+import org.wit.models.Item
 import tornadofx.*
 import java.time.LocalDate
 

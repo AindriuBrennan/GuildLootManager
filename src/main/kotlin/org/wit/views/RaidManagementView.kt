@@ -1,14 +1,14 @@
-package views
+package org.wit.views
 
 
 import javafx.collections.FXCollections
 import tornadofx.*
 import java.time.LocalDate
-import controllers.CharacterController
-import controllers.ItemsController
+import org.wit.controllers.CharacterController
+import org.wit.controllers.ItemsController
 import javafx.beans.property.SimpleObjectProperty
 import javafx.beans.property.SimpleStringProperty
-import models.Item
+import org.wit.models.Item
 
 class RaidManagementView: View() {
     val characterController: CharacterController by inject()
@@ -40,11 +40,22 @@ class RaidManagementView: View() {
                     combobox(_name, chars)
                 }
 
+                /*
+                 * make the ArrayList of created items available as to be selected here
+                 * Bug from how the item names are bound with the view model, item name
+                 * is not properly displayed.
+                 *
+                 */
+
                 field("Item") {
                     val itemNames = itemList.map {it.name}
                     val loot = FXCollections.observableArrayList(itemNames)
                     combobox(_itemCollected, itemList)
                 }
+
+                /**
+                 *  Add items to the character object and the character being updated to the item
+                 */
 
                 button("Submit") {
                     enableWhen(model.valid)
@@ -57,6 +68,12 @@ class RaidManagementView: View() {
                         println("Character & Item Records Updated!")
                     }
                 }
+
+                /**
+                 *
+                 * Delete both character and item from each others tracking array
+                 */
+
                 button("Delete Item") {
                     action {
                         runAsyncWithProgress {

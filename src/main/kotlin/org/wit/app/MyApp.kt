@@ -1,7 +1,7 @@
-package app
+package org.wit.app
 
 import tornadofx. *
-import views.LandingView
+import org.wit.views.LandingView
 
 class MyApp : App(LandingView::class)
 

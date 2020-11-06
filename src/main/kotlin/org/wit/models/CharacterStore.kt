@@ -1,4 +1,4 @@
-package models
+package org.wit.models
 
 import java.time.LocalDate
 

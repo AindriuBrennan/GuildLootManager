@@ -1,4 +1,4 @@
-package models
+package org.wit.models
 
 interface ItemStore {
    fun findOne(item: Item): Item?

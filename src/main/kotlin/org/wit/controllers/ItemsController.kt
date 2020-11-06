@@ -1,8 +1,8 @@
-package controllers
+package org.wit.controllers
 
-import models.CharacterModel
-import models.Item
-import models.ItemJSONStore
+import org.wit.models.CharacterModel
+import org.wit.models.Item
+import org.wit.models.ItemJSONStore
 import mu.KotlinLogging
 import tornadofx.*
 

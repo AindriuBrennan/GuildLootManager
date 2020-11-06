@@ -1,10 +1,11 @@
-package views
-import controllers.CharacterController
-import controllers.ItemsController
+package org.wit.views
+import org.wit.controllers.CharacterController
+import org.wit.controllers.ItemsController
 import javafx.beans.property.SimpleStringProperty
 import javafx.scene.control.Alert
-import models.CharacterModel
+import org.wit.models.CharacterModel
 import tornadofx.*
+import java.awt.Color
 
 class MemberManagementView: View() {
     val model = ViewModel()
@@ -44,6 +45,7 @@ class MemberManagementView: View() {
                     }
                 }
             }
+
             button("Delete Character"){
                 action{
                     runAsyncWithProgress {
