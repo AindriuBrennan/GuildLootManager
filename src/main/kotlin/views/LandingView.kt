@@ -7,7 +7,9 @@ import javafx.scene.layout.BorderPane
 import tornadofx. *
 
 class LandingView: View() {
+
     override val root = vbox {
+        reloadViewsOnFocus()
         setPrefSize(600.00,400.00)
 
         listmenu(theme = "blue", orientation = Orientation.HORIZONTAL) {
@@ -43,16 +45,6 @@ class LandingView: View() {
             }
         }
     }
-//        setPrefSize(600.00,400.00)
-//
-//        button("Guild Member Management")
-//        button("Raid Management")
-//        label("Item Drops Database")
-//        textfield {  }
-//        button("Search")
-//
-//    }
-
 }
 
 

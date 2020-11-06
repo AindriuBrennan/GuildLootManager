@@ -2,6 +2,7 @@ package views
 import controllers.CharacterController
 import controllers.ItemsController
 import javafx.beans.property.SimpleStringProperty
+import javafx.scene.control.Alert
 import models.CharacterModel
 import tornadofx.*
 
@@ -14,9 +15,10 @@ class MemberManagementView: View() {
     val characterController: CharacterController by inject()
     val tableContent = characterController.characters.findAll()
     val data = tableContent.asObservable()
-
+    val charsOnly = ("[A-Z<\n]+".toRegex())
 
     override val root = vbox{
+        reloadViewsOnFocus()
         setPrefSize(600.00,400.00)
 
         form {
@@ -37,9 +39,9 @@ class MemberManagementView: View() {
                 enableWhen(model.valid)
                 action{
                     runAsyncWithProgress {
-                        characterController.addChar(_name.value  ,_race.value, _classType.value)
+                            characterController.addChar(_name.value, _race.value, _classType.value)
+                            println("Character Created!")
                     }
-                    println("Character Created!")
                 }
             }
             button("Delete Character"){

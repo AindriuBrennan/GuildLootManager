@@ -22,6 +22,7 @@ class RaidManagementView: View() {
 
 
     override val root = vbox {
+        reloadViewsOnFocus()
         setPrefSize(600.00, 400.00)
 
         form{
@@ -53,7 +54,7 @@ class RaidManagementView: View() {
                             itemController.updateItem(_itemCollected.value, _name.value )
 
                         }
-                        println("Character Item Record Updated!")
+                        println("Character & Item Records Updated!")
                     }
                 }
                 button("Delete Item") {
@@ -62,7 +63,7 @@ class RaidManagementView: View() {
                             itemController.deletePlayerFromItem(_itemCollected.value, _name.value)
                             characterController.deleteItemFromPlayer(_name.value, _itemCollected.value, _dateCollected.value)
                         }
-                        println("Character Record Deleted from Item")
+                        println("Item Record Deleted from Item & Character")
                     }
                 }
                 button("Main Menu") {

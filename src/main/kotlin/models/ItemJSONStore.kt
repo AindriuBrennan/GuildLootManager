@@ -23,26 +23,26 @@ class ItemJSONStore : ItemStore {
         }
     }
 
-    override fun findOne(itemToFind: Item): Item? {
-        return items.find { i -> i == itemToFind}
+    override fun findOne(item: Item): Item? {
+        return items.find { i -> i == item}
     }
 
     override fun findAll(): MutableList<Item>{
         return items
     }
 
-    override fun update(_itemName: Item, _playerWithItem: String) {
-        val foundItem = findOne(_itemName)
+    override fun update(item: Item, charactersWithItem: String) {
+        val foundItem = findOne(item)
         if(foundItem != null) {
-            foundItem.playersWithItem?.add(_playerWithItem)
+            foundItem.playersWithItem?.add(charactersWithItem)
         }
         serialize()
     }
 
-    override fun delete(_itemName: Item, _playerWithItem: String) {
-        val foundItem = findOne(_itemName)
+    override fun delete(item: Item, charactersWithItem: String) {
+        val foundItem = findOne(item)
         if(foundItem != null) {
-            foundItem.playersWithItem?.remove(_playerWithItem)
+            foundItem.playersWithItem?.remove(charactersWithItem)
         }
         serialize()
     }

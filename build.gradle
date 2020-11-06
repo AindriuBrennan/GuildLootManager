@@ -12,6 +12,10 @@ repositories {
 compileKotlin {
     kotlinOptions.jvmTarget= 1.8
 }
+test {
+    useJUnitPlatform()
+}
+
 
 
 dependencies {
@@ -19,4 +23,9 @@ dependencies {
     implementation 'no.tornado:tornadofx:1.7.20'
     implementation "com.google.code.gson:gson:2.8.5"
     implementation 'io.github.microutils:kotlin-logging:1.6.22'
+    implementation 'junit:junit:4.12'
+    implementation 'org.junit.jupiter:junit-jupiter:5.4.2'
+    implementation "org.jetbrains.kotlin:kotlin-test:1.4.10"
+    testImplementation("org.junit.jupiter:junit-jupiter-api:5.4.2")
+    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.4.2")
 }
