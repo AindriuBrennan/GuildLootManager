@@ -1,58 +1,18 @@
 [
   {
-    "id": 8919496670556292818,
-    "name": "Bob",
+    "id": -7905011096259844952,
+    "name": "Aidriu",
     "race": "Gnome",
     "classType": "Mage",
-    "itemsCollected": [
-      {
-        "id": 1,
-        "name": "Arcanists Crown",
-        "playersWithItem": [
-          "Aindriu",
-          "billy",
-          "Bob"
-        ]
-      },
-      {
-        "id": 3,
-        "name": "Silithid Femur",
-        "playersWithItem": [
-          "Bob"
-        ]
-      }
-    ],
-    "dateCollected": [
-      {
-        "year": 2020,
-        "month": 11,
-        "day": 4
-      },
-      {
-        "year": 2020,
-        "month": 11,
-        "day": 4
-      }
-    ]
+    "itemsCollected": [],
+    "dateCollected": []
   },
   {
-    "id": 6433789069336503792,
-    "name": "Thorin",
-    "race": "Dwarf",
-    "classType": "Priest",
-    "itemsCollected": [
-      {
-        "id": 2,
-        "name": "Azuresong Mageblade",
-        "playersWithItem": []
-      }
-    ],
-    "dateCollected": [
-      {
-        "year": 2020,
-        "month": 11,
-        "day": 5
-      }
-    ]
+    "id": 2489200756394471362,
+    "name": "Cailleach",
+    "race": "Gnome",
+    "classType": "Warlock",
+    "itemsCollected": [],
+    "dateCollected": []
   }
 ]
