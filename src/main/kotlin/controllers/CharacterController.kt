@@ -7,6 +7,7 @@ import models.Item
 import tornadofx.*
 import java.time.LocalDate
 
+
 class CharacterController: Controller() {
 
     val charModel = CharacterModel()
@@ -16,6 +17,7 @@ class CharacterController: Controller() {
 
     init {
         logger.info { "Guild Loot Council Management App has launched!"} }
+
 
     fun addChar (_name: String, _race: String, _classType: String ) {
         var newChar = CharacterModel(name = _name, race = _race, classType = _classType)
@@ -32,8 +34,6 @@ class CharacterController: Controller() {
     fun deleteItemFromPlayer (_name: String, _itemsCollected: Item, _dateCollected: LocalDate) {
         characters.deleteItemFromPlayer(_name, _itemsCollected, _dateCollected)
     }
-
-
 
     fun updateChar(_name: String, _itemsCollected: Item, _dateCollected: LocalDate) {
 

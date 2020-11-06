@@ -44,8 +44,8 @@ class CharacterJSONStore : CharacterStore {
         serialize()
     }
 
-    override fun delete(_name: String) {
-        var charToDelete = findOne(_name)
+    override fun delete(name: String) {
+        var charToDelete = findOne(name)
         if(charToDelete != null) {
             characters.remove(charToDelete)
         }
@@ -57,7 +57,6 @@ class CharacterJSONStore : CharacterStore {
         if(foundCharacter != null) {
             foundCharacter.itemsCollected?.add(_itemsCollected)
             foundCharacter.dateCollected?.add(_dateCollected)
-//            characters.add(foundCharacter)
         }
         serialize()
     }

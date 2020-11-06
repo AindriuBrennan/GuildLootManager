@@ -1,9 +1,12 @@
 package models
 
-import tornadofx.*
+
 import java.time.LocalDate
 import java.util.*
-import javax.json.JsonObject
+
+/**
+ * Character model for users to create
+ */
 
 class CharacterModel(
         var id: Long? = 0,

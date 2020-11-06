@@ -24,6 +24,7 @@ class ItemAndPlyerView: View() {
 
 
     override val root =vbox {
+        reloadViewsOnFocus()
         setPrefSize(600.00,400.00)
 
             hbox{

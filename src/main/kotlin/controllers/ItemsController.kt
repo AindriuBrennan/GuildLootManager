@@ -26,11 +26,3 @@ class ItemsController: Controller() {
     }
 
 }
-
-//override fun update(_itemName: String, _playerWithItem: CharacterModel) {
-//    val foundItem = findOne(_itemName)
-//    if(foundItem != null) {
-//        foundItem.playersWithItem?.add(_playerWithItem)
-//    }
-//    serialize()
-//}
