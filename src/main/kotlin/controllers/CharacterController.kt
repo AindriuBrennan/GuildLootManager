@@ -29,6 +29,12 @@ class CharacterController: Controller() {
         logger.info("Character Deleted there ")
     }
 
+    fun deleteItemFromPlayer (_name: String, _itemsCollected: Item, _dateCollected: LocalDate) {
+        characters.deleteItemFromPlayer(_name, _itemsCollected, _dateCollected)
+    }
+
+
+
     fun updateChar(_name: String, _itemsCollected: Item, _dateCollected: LocalDate) {
 
         characters.update(_name, _itemsCollected, _dateCollected)

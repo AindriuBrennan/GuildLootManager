@@ -62,6 +62,15 @@ class CharacterJSONStore : CharacterStore {
         serialize()
     }
 
+    override  fun deleteItemFromPlayer(_name: String, _itemsCollected: Item, _dateCollected: LocalDate) {
+        var foundCharacter = findOne(_name)
+        if(foundCharacter != null) {
+            foundCharacter.itemsCollected?.remove(_itemsCollected)
+            foundCharacter.dateCollected?.remove(_dateCollected)
+        }
+        serialize()
+    }
+
     internal fun logAll() {
         characters.forEach {logger.info("$it")}
     }

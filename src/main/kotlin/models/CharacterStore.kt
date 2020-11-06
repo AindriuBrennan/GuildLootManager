@@ -8,4 +8,5 @@ interface CharacterStore {
     fun create(characterModel: CharacterModel)
     fun delete(name: String)
     fun update(_name: String, _itemsCollected: Item, _dateCollected: LocalDate)
+    fun deleteItemFromPlayer(name: String, _itemsCollected: Item, _dateCollected: LocalDate)
 }

@@ -59,7 +59,8 @@ class RaidManagementView: View() {
                 button("Delete Item") {
                     action {
                         runAsyncWithProgress {
-                            itemController.deleteItemFromPlayer(_itemCollected.value, _name.value)
+                            itemController.deletePlayerFromItem(_itemCollected.value, _name.value)
+                            characterController.deleteItemFromPlayer(_name.value, _itemCollected.value, _dateCollected.value)
                         }
                         println("Character Record Deleted from Item")
                     }
